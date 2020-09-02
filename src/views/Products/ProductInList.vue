@@ -31,13 +31,11 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-
 export default {
   name: "ProductInList",
   created() {
     this.getProductIn();
   },
-
   methods: {
     ...mapActions(["getProductIn"]),
   },
@@ -45,4 +43,3 @@ export default {
     ...mapState(["productsIn"]),
   },
 };
-</script>
