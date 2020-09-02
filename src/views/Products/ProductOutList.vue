@@ -7,7 +7,7 @@
       style="transition: all .15s ease"
       v-on:click="toggleModal()"
     >
-      ADD PRODUCT IN
+      ADD PRODUCT OUT
     </button>
 
     <div
@@ -127,6 +127,8 @@ export default {
   name: "ProductOutList",
     data() {
       return {
+        product_name: "",
+        total: "",
         showModal: false,
       };
     },
@@ -139,7 +141,24 @@ export default {
     toggleModal() {
         this.showModal = !this.showModal;
       },
-    ...mapActions(["getProductOut", "getProduct"]),
+      checkForm(e) {
+      let error = [];
+      if (this.product_name === "") error.push("Product name Required");
+      if (this.total === "") error.push("total Required");
+      console.log({ error });
+      if (error.length > 0) {
+        this.alert = error;
+      } else {
+        const payload = {
+          product_name: this.product_name,
+          total: this.total
+        };
+        this.productOutAction(payload);
+      }
+      e.preventDefault();
+      return false;
+    },
+    ...mapActions(["getProductOut", "getProduct", "productOutAction"]),
   },
   computed: {
     ...mapState(["productsOut", "products"]),

@@ -68,17 +68,6 @@ const Auth = {
       // const { data } = await Api.post("/auth/login", { data: payload });
       console.log({ commit });
     },
-    async productInAction(payload) {
-
-      Api.post("/in", JSON.stringify({ data: payload }))
-        .then((res) => {
-          console.log({ res });
-        })
-        .catch((errr) => {
-          console.log({ errr: errr.message });
-        });
-      // console.log({ registerAction: data });
-    },
   },
 };
 
@@ -207,6 +196,17 @@ export default new Vuex.Store({
         });
       // console.log({ registerAction: data });
       commit("setBoolean", { key: "postLoading", value: false });
+    },
+    async productOutAction(payload) {
+
+      Api.post("/in", JSON.stringify({ data: payload }))
+        .then((res) => {
+          console.log({ res });
+        })
+        .catch((errr) => {
+          console.log({ errr: errr.message });
+        });
+      // console.log({ registerAction: data });
     },
   },
   getters: {
