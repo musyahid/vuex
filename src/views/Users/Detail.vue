@@ -3,7 +3,7 @@
         <!--Table Card-->
         <div class="bg-white border rounded shadow">
             <div class="border-b p-3">
-                <h5 class="font-bold uppercase text-gray-600"> Detail Table se</h5>
+                <h5 class="font-bold uppercase text-gray-600"> Detail Table user</h5>
             </div>
             <div class="p-5">
                 <table class="py-5 text-gray-700">

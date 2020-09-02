@@ -153,7 +153,7 @@ export default new Vuex.Store({
       try {
         const { data } = await Api.get(`/user/${id}`);
         // console.log(data);
-        commit("setDetailUser", data.data);
+        commit("setDetailUser", data);
       } catch (error) {
         console.log({ error: error.message });
       }
